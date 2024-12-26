@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: frontend-config
+data:
+  REACT_APP_USERNAME: "Mariarty"
+  REACT_APP_COMPANY_NAME: "Global-super-neuro-company"
+  REACT_APP_DOMAIN_NAME: "mary-art"

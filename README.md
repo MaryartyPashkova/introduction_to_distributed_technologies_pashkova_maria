@@ -1,1 +1,3 @@
-# introduction_to_distributed_technologies_pashkova_maria
+#### introduction_to_distributed_technologies_pashkova_maria
+
+## В папках расписаны лабораторные работы с 1 по 4.

@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-east
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: react-east
+  template:
+    metadata:
+      labels:
+        app: react-east
+    spec:
+      nodeSelector:
+        location: east
+      containers:
+      - name: react-app
+        image: ifilyaninitmo/itdt-contained-frontend:master
+        env:
+        - name: REACT_APP_USERNAME
+          value: "Maryarty"
+        - name: REACT_APP_COMPANY_NAME
+          value: "ITMO_Maryarty"
+        ports:
+        - containerPort: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-west
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: react-west
+  template:
+    metadata:
+      labels:
+        app: react-west
+    spec:
+      nodeSelector:
+        location: west
+      containers:
+      - name: react-app
+        image: ifilyaninitmo/itdt-contained-frontend:master
+        env:
+        - name: REACT_APP_USERNAME
+          value: "Maryarty"
+        - name: REACT_APP_COMPANY_NAME
+          value: "ITMO_Maryarty"
+        ports:
+        - containerPort: 3000

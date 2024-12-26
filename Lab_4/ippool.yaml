@@ -1,0 +1,17 @@
+apiVersion: projectcalico.org/v3
+kind: IPPool
+metadata:
+  name: east-pool
+spec:
+  cidr: 192.168.1.0/24
+  ipipMode: Always
+  nodeSelector: location == "east"
+---
+apiVersion: projectcalico.org/v3
+kind: IPPool
+metadata:
+  name: west-pool
+spec:
+  cidr: 192.168.2.0/24
+  ipipMode: Always
+  nodeSelector: location == "west"
